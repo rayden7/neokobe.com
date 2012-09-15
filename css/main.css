@@ -18,10 +18,45 @@ textarea {
     color: #222;
 }
 
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/Futura.ttc');
+    src: local('Futura'), local('Futura'), url('fonts/Futura.ttc') format('truetype');
+}
+
 body {
     font-size: 1em;
     line-height: 1.4;
+    font-family: Futura;
+    margin: 0;
+    padding: 0;
+
+    /*
+    height: 100%;
+    position: fixed;
+    */
+
+    background-image: linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(186,195,255)),
+        color-stop(0.9, rgb(250,250,250)),
+        color-stop(1, rgb(97,158,250))
+    );
+
+    background-color: rgb(186,195,255);
+
+    background-repeat: no-repeat;
+
 }
+
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -93,10 +128,102 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#main {
+    border: 1px dashed orange;
+    border: none;
+    /*background: #c45fc4;*/
+    /*background: transparent;*/
+    padding: 5px;
+    /*
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    */
+}
 
+#header {
+    border: 1px solid black;
+    border: none;
+    padding: 5px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
 
+#content {
+    border: 1px solid red;
+    border: none;
+    min-width: 350px;
+    width: 50%;
+    padding: 0px;
+    margin: 0 auto;
+}
 
+#gillian-img {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    margin: 0 auto;
+    position: relative;
+}
 
+div.bioregion {
+    padding: 0px 5px;
+    margin: 5px auto;
+    width: 95%;
+}
+
+div.bioregion p span.textboxed {
+    display: inline-block;
+    border: 1px solid #696969;
+    background: #d1d1d1;
+    margin: 5px 5px 5px 5px;
+    padding: 2px;
+    width: 100%;
+    position: relative;
+}
+
+#neoKobeBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /*border: 1px solid #c00;*/
+    background: url('../img/518185-snatcher-sega-saturn-screenshot-panorama-of-neo-kobes.png') no-repeat;
+    /*background-size: 75%;*/
+
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.emphasize {
+    font-weight: bolder;
+    font-size: 1.05em;
+}
 
 
 
