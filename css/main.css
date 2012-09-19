@@ -30,18 +30,11 @@ body {
     font-family: Futura;
     margin: 0;
     padding: 0;
-
-    /*
-    height: 100%;
-    position: fixed;
-    */
-
     background-image: linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
     background-image: -o-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
     background-image: -moz-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
     background-image: -webkit-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
     background-image: -ms-linear-gradient(bottom, rgb(186,195,255) 0%, rgb(250,250,250) 90%, rgb(97,158,250) 100%);
-
     background-image: -webkit-gradient(
         linear,
         left bottom,
@@ -50,11 +43,8 @@ body {
         color-stop(0.9, rgb(250,250,250)),
         color-stop(1, rgb(97,158,250))
     );
-
     background-color: rgb(186,195,255);
-
     background-repeat: no-repeat;
-
 }
 
 
@@ -63,7 +53,6 @@ body {
  * These selection declarations have to be separate.
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -77,7 +66,6 @@ body {
 /*
  * A better looking default horizontal rule
  */
-
 hr {
     display: block;
     height: 1px;
@@ -90,7 +78,6 @@ hr {
 /*
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
-
 img {
     vertical-align: middle;
 }
@@ -128,21 +115,15 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body,
 #main {
-    border: 1px dashed orange;
     border: none;
-    /*background: #c45fc4;*/
-    /*background: transparent;*/
-    padding: 5px;
-    /*
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    */
+    padding: 0;
+    margin: 0;
 }
 
+header,
 #header {
-    border: 1px solid black;
     border: none;
     padding: 5px;
     margin: 0 auto;
@@ -150,6 +131,57 @@ textarea {
     text-align: center;
 }
 
+
+
+header h2 {
+    border: 1px solid #696969;
+
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    /*display: block;*/
+
+display: inline-block;
+
+    float: left;
+    clear: both;
+
+    margin: 0;
+    padding: 0;
+    /*text-align: center;*/
+    /*
+    left: 20px;
+    top: 75px;
+    */
+    overflow: auto;
+    /*height: 100%;*/
+
+    width: 50px;
+    /*min-height: 100px;*/
+    /*height: 300px;*/
+
+
+    /*position: absolute;*/
+    text-wrap: none;
+    word-break: keep-all;
+
+    background: #cfcfcf;
+}
+
+
+article,
 #content {
     border: 1px solid red;
     border: none;
@@ -178,14 +210,57 @@ div.bioregion {
     width: 95%;
 }
 
+.dropshadows {
+    -moz-box-shadow: 3px 3px 7px #000;
+    -webkit-box-shadow: 3px 3px 7px #000;
+    box-shadow: 3px 3px 7px #000;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#000000');
+}
+
+
+div.bioregion .textboxed,
+div.bioregion p .textboxed,
 div.bioregion p span.textboxed {
     display: inline-block;
     border: 1px solid #696969;
     background: #d1d1d1;
-    margin: 5px 5px 5px 5px;
-    padding: 2px;
+
+    background-image: linear-gradient(top, rgb(207,207,207) 31%, rgb(140,138,140) 66%, rgb(61,61,61) 100%);
+    background-image: -o-linear-gradient(top, rgb(207,207,207) 31%, rgb(140,138,140) 66%, rgb(61,61,61) 100%);
+    background-image: -moz-linear-gradient(top, rgb(207,207,207) 31%, rgb(140,138,140) 66%, rgb(61,61,61) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(207,207,207) 31%, rgb(140,138,140) 66%, rgb(61,61,61) 100%);
+    background-image: -ms-linear-gradient(top, rgb(207,207,207) 31%, rgb(140,138,140) 66%, rgb(61,61,61) 100%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0.31, rgb(207,207,207)),
+        color-stop(0.66, rgb(140,138,140)),
+        color-stop(1, rgb(61,61,61))
+    );
+
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 5px;
+    padding: 5px 10px;
     width: 100%;
     position: relative;
+
+    /*
+    -moz-box-shadow: 3px 3px 7px #000;
+    -webkit-box-shadow: 3px 3px 7px #000;
+    box-shadow: 3px 3px 7px #000;
+    */
+}
+
+div.bioregion div.textboxed {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 #neoKobeBG {
@@ -225,15 +300,16 @@ div.bioregion p span.textboxed {
     font-size: 1.05em;
 }
 
+footer {
+    border: 1px solid red;
+    border: none;
+    margin: 50px 5px 20px 5px;
+}
 
-
-
-
-
-
-
-
-
+.footertext {
+    text-align: center;
+    font-size: 0.75em;
+}
 
 
 /* ==========================================================================
