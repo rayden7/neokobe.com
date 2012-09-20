@@ -168,6 +168,7 @@ div#headerdiv {
 
 /* header h2 { */
 div#headerdiv h2 {
+
     /* Safari */
     -webkit-transform: rotate(-90deg);
     /* Firefox */
@@ -177,7 +178,7 @@ div#headerdiv h2 {
     /* Opera */
     -o-transform: rotate(-90deg);
     /* Internet Explorer */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 
     -o-transform-origin: bottom right;
     -moz-transform-origin: bottom right;
@@ -338,6 +339,7 @@ footer {
     border: 1px solid red;
     border: none;
     margin: 50px 5px 20px 5px;
+    text-align: center;
 }
 
 .footertext {

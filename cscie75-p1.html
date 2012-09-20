@@ -3,7 +3,11 @@
 <head>
     <title>CSCI-E 75 : Assignment P1</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script type="text/javascript" src="js/vendor/jquery-1.8.0.min.js" />
+    <script type="text/javascript" src="js/vendor/modernizr-2.6.1.min.js" />
+    <script type="text/javascript" src="js/main.js" />
     <meta name="description" content="CSCI-E 75 Dynamic Web Applications Assignment P1 page for David Killeffer" />
+    <meta charset="UTF-8">
 </head>
 <body>
 
@@ -24,7 +28,25 @@ http://lesscss.org/
 
 http://www.aquim.com/web-article-223.html
 
+http://developerssolutions.wordpress.com/2010/07/28/load-css-dynamically/
 
+http://www.webmasterworld.com/forum83/4087.htm
+
+use for CSS toggle: http://awardwinningfjords.com/2009/06/16/iphone-style-checkboxes.html
+
+http://coding.smashingmagazine.com/2010/04/28/css3-solutions-for-internet-explorer/
+
+
+
+----------------
+
+Fun HTML5 / CSS / JavaScript stuff:
+
+http://www.google.com/green/storyofsend/desktop/
+
+http://awardwinningfjords.com/2012/08/15/splines.html
+
+http://awardwinningfjords.com/2012/05/23/3d-css-accordion.html
 
 -->
 
@@ -32,7 +54,14 @@ http://www.aquim.com/web-article-223.html
         <h2>Assignment P1</h2>
     </div>
 
-    <header>
+
+<!--
+<a href="javascript:var i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled;for(i=0;i<document.styleSheets.length;i++)
+document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try Without CSS?</span></a>
+
+-->
+
+<header>
         <h1>CSCI-E 75 Dynamic Web Applications</h1>
         <!--<h2>Assignment P1</h2>-->
         <img id="gillian-img" src="img/306093-gillian4.jpg" alt="Gillian Seed" title="Gillian Seed" />
@@ -98,6 +127,10 @@ http://www.aquim.com/web-article-223.html
     </article>
 
     <footer>
+        <div id="footerlinks">
+            <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fneokobe.com%2Fcscie75-p1.html#preparse_warnings"><img src="http://www.w3.org/Icons/valid-html401-blue.png" alt="W3C Valid HTML 4.01" /></a>
+            <!--<a href="http://jigsaw.w3.org/css-validator/validator?uri=www.neokobe.com%2Fcscie75-p1.html&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en"><img src="http://www.w3.org/Icons/valid-css2-blue.png" alt="W3C Valid CSS 2" /></a>-->
+        </div>
         <p class="footertext">&copy; 2012 David Killeffer.</p>
     </footer>
 
