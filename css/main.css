@@ -214,6 +214,14 @@ div#headerdiv h2 {
 }
 
 
+#cssToggleDiv {
+
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid red;
+    padding: 5px;
+
+}
 
 
 article,
@@ -309,7 +317,7 @@ div.bioregion div.textboxed {
     height: 100%;
     z-index: -1;
     /*border: 1px solid #c00;*/
-    background: url('../img/518185-snatcher-sega-saturn-screenshot-panorama-of-neo-kobes.png') no-repeat;
+    /*background: url('../img/518185-snatcher-sega-saturn-screenshot-panorama-of-neo-kobes.png') no-repeat;*/
     /*background-size: 75%;*/
 
     /* Theoretically for IE 8 & 9 (more valid) */

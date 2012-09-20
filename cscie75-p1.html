@@ -3,11 +3,58 @@
 <head>
     <title>CSCI-E 75 : Assignment P1</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <script type="text/javascript" src="js/vendor/jquery-1.8.0.min.js" />
-    <script type="text/javascript" src="js/vendor/modernizr-2.6.1.min.js" />
-    <script type="text/javascript" src="js/main.js" />
+    <script type="text/javascript" src="js/vendor/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/modernizr-2.6.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <meta name="description" content="CSCI-E 75 Dynamic Web Applications Assignment P1 page for David Killeffer" />
     <meta charset="UTF-8">
+
+
+    <script src="js/iphone-style-checkboxes.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/iphone-style.css" type="text/css" media="screen" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(':checkbox').iphoneStyle();
+
+            alert('document is ready');
+
+            $('#cssToggleSpan').onclick(function(){
+                alert('stylesheets on!');
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function() {
+            $('.on_off :checkbox').iphoneStyle();
+            $('.disabled :checkbox').iphoneStyle();
+            $('.css_sized_container :checkbox').iphoneStyle({ resizeContainer: false, resizeHandle: false });
+            $('.long_tiny :checkbox').iphoneStyle({ checkedLabel: 'Very Long Text', uncheckedLabel: 'Tiny' });
+
+            var onchange_checkbox = ($('.onchange :checkbox')).iphoneStyle({
+                onChange: function(elem, value) {
+                    $('span#status').html(value.toString());
+                    /*
+                    var i=0;
+                    if(document.styleSheets.length>0) {
+                        cs=!document.styleSheets[0].disabled;
+                        for(i=0;i<document.styleSheets.length;i++)
+                            document.styleSheets[i].disabled=cs;
+                    };
+                    void(cs=true);
+                    */
+                }
+            });
+
+            //setInterval(function() {
+            //    onchange_checkbox.prop('checked', !onchange_checkbox.is(':checked')).iphoneStyle("refresh");
+            //    return
+            //}, 2500);
+        });
+    </script>
+
+
 </head>
 <body>
 
@@ -38,7 +85,7 @@ http://coding.smashingmagazine.com/2010/04/28/css3-solutions-for-internet-explor
 
 
 
-----------------
+- - - - - - - - - - - - - - - -
 
 Fun HTML5 / CSS / JavaScript stuff:
 
@@ -55,11 +102,20 @@ http://awardwinningfjords.com/2012/05/23/3d-css-accordion.html
     </div>
 
 
-<!--
-<a href="javascript:var i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled;for(i=0;i<document.styleSheets.length;i++)
-document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try Without CSS?</span></a>
 
--->
+
+
+<div id="cssToggleDiv" class="on_off">
+    <!--<label for="on_off_on">CSS: </label><input type="checkbox" checked="checked" id="on_off_on"/>-->
+
+    <!--
+    <a href="javascript:var i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled;for(i=0;i<document.styleSheets.length;i++)
+document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try Without CSS?</span></a>
+    -->
+
+    <a id="cssToggleSpan">Try Without CSS?</a>
+
+</div>
 
 <header>
         <h1>CSCI-E 75 Dynamic Web Applications</h1>
@@ -129,7 +185,7 @@ document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try W
     <footer>
         <div id="footerlinks">
             <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fneokobe.com%2Fcscie75-p1.html#preparse_warnings"><img src="http://www.w3.org/Icons/valid-html401-blue.png" alt="W3C Valid HTML 4.01" /></a>
-            <!--<a href="http://jigsaw.w3.org/css-validator/validator?uri=www.neokobe.com%2Fcscie75-p1.html&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en"><img src="http://www.w3.org/Icons/valid-css2-blue.png" alt="W3C Valid CSS 2" /></a>-->
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=www.neokobe.com%2Fcscie75-p1.html&amp;profile=css3&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=en"><img src="http://www.w3.org/Icons/valid-css2-blue.png" alt="W3C Valid CSS 2" /></a>
         </div>
         <p class="footertext">&copy; 2012 David Killeffer.</p>
     </footer>
