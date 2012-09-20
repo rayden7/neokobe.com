@@ -122,8 +122,8 @@ body,
     margin: 0;
 }
 
-header,
-#header {
+header {
+/*#header {*/
     border: none;
     padding: 5px;
     margin: 0 auto;
@@ -131,54 +131,88 @@ header,
     text-align: center;
 }
 
-
-
-header h2 {
-    border: 1px solid #696969;
-
-    /* Safari */
-    -webkit-transform: rotate(-90deg);
-
-    /* Firefox */
-    -moz-transform: rotate(-90deg);
-
-    /* IE */
-    -ms-transform: rotate(-90deg);
-
-    /* Opera */
-    -o-transform: rotate(-90deg);
-
-    /* Internet Explorer */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
-    /*display: block;*/
-
-display: inline-block;
-
+/* header h2 { */
+div#headerdiv {
+    border-right: 3px solid #696969;
+    /*display: inline-block;*/
     float: left;
     clear: both;
 
     margin: 0;
     padding: 0;
+
+    position: fixed;
+
+    /*overflow: auto;*/
+    width: 125px;
+    width: 100px;
+    width: 75px;
+
     /*text-align: center;*/
+
+    height: 350px;
+    height: 960px;
+    height: 100%;
+
+    top: -300px;
+    top: 0;
+
     /*
-    left: 20px;
-    top: 75px;
-    */
-    overflow: auto;
-    /*height: 100%;*/
-
-    width: 50px;
-    /*min-height: 100px;*/
-    /*height: 300px;*/
-
-
-    /*position: absolute;*/
+    text-align: left;
     text-wrap: none;
-    word-break: keep-all;
+    */
 
+    /*word-break: keep-all;*/
     background: #cfcfcf;
 }
+
+/* header h2 { */
+div#headerdiv h2 {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    -o-transform-origin: bottom right;
+    -moz-transform-origin: bottom right;
+    -webkit-transform-origin: bottom right;
+
+    /*position: absolute;*/
+    /*text-wrap: none;*/
+    /*word-break: keep-all;*/
+    background: #cfcfcf;
+
+    /*display: block;*/
+
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    /**
+     * when adjusting the text to be vertical, the width is also shifted
+     * vertically, e.g., width is really height, height is really width
+     */
+    width: 100%;
+    width: 300px;
+    width: 400px;
+    height: 1.75em;
+
+    position: relative;
+
+    /* works.... kinda */
+    left: -350px;
+    top: 250px;
+
+    /*border: 1px solid red;*/
+}
+
+
 
 
 article,
