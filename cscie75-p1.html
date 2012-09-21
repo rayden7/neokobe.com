@@ -8,24 +8,32 @@
     <script type="text/javascript" src="js/main.js"></script>
     <meta name="description" content="CSCI-E 75 Dynamic Web Applications Assignment P1 page for David Killeffer" />
     <meta charset="UTF-8">
-
-
     <script src="js/iphone-style-checkboxes.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/iphone-style.css" type="text/css" media="screen" />
     <script type="text/javascript">
         $(document).ready(function() {
             $(':checkbox').iphoneStyle();
 
-            alert('document is ready');
-
-            $('#cssToggleSpan').onclick(function(){
-                alert('stylesheets on!');
+            $('#cssToggleSpan').click(function(){
+                var i = 0;
+                if (document.styleSheets.length > 0) {
+                    var cs = !document.styleSheets[0].disabled;
+                    for (i=0; i<document.styleSheets.length; i++) {
+                        document.styleSheets[i].disabled = cs;
+                    }
+                    if (!cs) {
+                        //alert('cs: ['+cs+']\nset text to [Turn CSS Off]');
+                        $('#cssToggleSpan').text('Turn CSS Off');
+                    } else {
+                        //alert('cs: ['+cs+']\nset text to [Turn CSS On]');
+                        $('#cssToggleSpan').text('Turn CSS On');
+                    }
+                };
+                void(cs=true);
             });
         });
-    </script>
 
 
-    <script type="text/javascript" charset="utf-8">
         $(window).load(function() {
             $('.on_off :checkbox').iphoneStyle();
             $('.disabled :checkbox').iphoneStyle();
@@ -35,15 +43,6 @@
             var onchange_checkbox = ($('.onchange :checkbox')).iphoneStyle({
                 onChange: function(elem, value) {
                     $('span#status').html(value.toString());
-                    /*
-                    var i=0;
-                    if(document.styleSheets.length>0) {
-                        cs=!document.styleSheets[0].disabled;
-                        for(i=0;i<document.styleSheets.length;i++)
-                            document.styleSheets[i].disabled=cs;
-                    };
-                    void(cs=true);
-                    */
                 }
             });
 
@@ -53,8 +52,6 @@
             //}, 2500);
         });
     </script>
-
-
 </head>
 <body>
 
@@ -101,26 +98,15 @@ http://awardwinningfjords.com/2012/05/23/3d-css-accordion.html
         <h2>Assignment P1</h2>
     </div>
 
+    <div id="cssToggleDiv" class="on_off">
+        <a id="cssToggleSpan">Turn CSS Off</a>
+    </div>
 
-
-
-
-<div id="cssToggleDiv" class="on_off">
-    <!--<label for="on_off_on">CSS: </label><input type="checkbox" checked="checked" id="on_off_on"/>-->
-
-    <!--
-    <a href="javascript:var i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled;for(i=0;i<document.styleSheets.length;i++)
-document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try Without CSS?</span></a>
-    -->
-
-    <a id="cssToggleSpan">Try Without CSS?</a>
-
-</div>
-
-<header>
+    <header>
         <h1>CSCI-E 75 Dynamic Web Applications</h1>
-        <!--<h2>Assignment P1</h2>-->
-        <img id="gillian-img" src="img/306093-gillian4.jpg" alt="Gillian Seed" title="Gillian Seed" />
+        <img id="gillian-img" src="img/306093-gillian4.jpg"
+             alt="Gillian Seed from the retro-gaming classic 'Snatcher' by Hideo Kojima, maker of 'Metal Gear Solid'"
+             title="Gillian Seed from the retro-gaming classic 'Snatcher' by Hideo Kojima, maker of 'Metal Gear Solid'" />
     </header>
 
     <article>
@@ -131,7 +117,14 @@ document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try W
         </div>
         <div class="bioregion">
             <p><span class="emphasize">Bio:</span>
-                <span class="textboxed dropshadows">a guy</span>
+                <span class="textboxed dropshadows">
+                    I work at Harvard Law School in the IT Department where I develop software to support the students,
+                    faculty, and staff.  I have been in web development for about 14 years in various capacities, but
+                    the past several years I've been doing less and less pure "web" development, and more and more
+                    database and design/architecture work.  I used to hack PHP back in the day (PHP3/4, 2001-2004 era)
+                    but I'm really rusty and haven't used it for a long time so I hope to refresh those skills through
+                    this course, as well as learn more about Git and more modern web dev techniques and practices.
+                </span>
             </p>
         </div>
         <div class="bioregion">
@@ -184,11 +177,17 @@ document.styleSheets[i].disabled=cs;};void(cs=true);"><span id="cssToggle">Try W
 
     <footer>
         <div id="footerlinks">
-            <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fneokobe.com%2Fcscie75-p1.html#preparse_warnings"><img src="http://www.w3.org/Icons/valid-html401-blue.png" alt="W3C Valid HTML 4.01" /></a>
-            <a href="http://jigsaw.w3.org/css-validator/validator?uri=www.neokobe.com%2Fcscie75-p1.html&amp;profile=css3&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=en"><img src="http://www.w3.org/Icons/valid-css2-blue.png" alt="W3C Valid CSS 2" /></a>
+            <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fneokobe.com%2Fcscie75-p1.html#preparse_warnings">
+                <img src="http://www.w3.org/Icons/valid-html401-blue.png" alt="W3C Valid HTML 4.01" />
+            </a>
+            <!-- unfortunately the CSS isn't validating yet, got some work to do on that... -->
+            <!--
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=www.neokobe.com%2Fcscie75-p1.html&amp;profile=css3&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=en">
+                <img src="http://www.w3.org/Icons/valid-css2-blue.png" alt="W3C Valid CSS 2" />
+            </a>
+            -->
         </div>
         <p class="footertext">&copy; 2012 David Killeffer.</p>
     </footer>
-
 </body>
 </html>
