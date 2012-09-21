@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SineWave</title>
+    <script type="text/javascript" src="js/vendor/jquery-1.8.0.min.js"></script>
+    <meta charset="UTF-8">
+
+
+ <!--   <script type='text/javascript' src="https://raw.github.com/weepy/jquery.path/master/jquery.path.js"></script>-->
+
+    <style type='text/css'>
+        div {
+            width: 100;
+            position: absolute;
+            height: 100;
+            background: #abcdef;
+            padding: 0.25em;
+            top: 80px;
+            left: 10px;
+        }
+
+        #pos1 { position: absolute; top:89px; font-size:8px; left:255px; }
+        #pos2{ position:absolute; top:144px;font-size:8px;}
+        #upperbound{position:absolute; top:38px;}
+        #lowerbound{position:absolute; top: 265px;}
+    </style>
+
+    <script type='text/javascript'>//<![CDATA[
+    $(window).load(function(){
+        function float(dir){
+            var x_current = $("div").offset().left;
+            var y_current = $("div").offset().top;
+            var SineWave = function() {
+                this.css = function(p) {
+                    var s = Math.sin(Math.abs(p-1)*10);
+                    if (!dir){// flip the sin wave to continue traversing
+                        s = -s;
+                    }
+                    var x =  300 -p * 300;
+                    var y = s * 100 + 150;
+                    //var o = ((s+2)/4+0.1); //opacity change
+                    last_x = x;
+                    // add the current x-position to continue the path, rather than restarting
+                    return {top: y + "px", left: x_current + x + "px"};
+                }
+            };
+
+            $("div").stop().animate({
+                path: new SineWave
+            }, 5000, 'linear', function(){
+                // avoid exceeding stack
+                setTimeout(function(){float(!dir)}, 0);
+            });
+
+        }
+
+        float(true);
+    });//]]>
+
+    </script>
+
+</head>
+<body>
+
+<div>stuff</div>
+
+
+<span id="upperbound">--------------------------------UPPER BOUND---------------------------------------------------</span>
+<span id="lowerbound">--------------------------------LOWER BOUND---------------------------------------------------</span>
+
+
+<span id="pos1">---It skips here--------------</span>
+
+<span id="pos2">-------------It starts here--</span>
+
+</body>
+</html>

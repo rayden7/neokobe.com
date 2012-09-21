@@ -151,6 +151,23 @@ header {
     text-align: center;
 }
 
+
+
+#waveMasthead {
+    /*
+    border: 1px solid red;
+    background: #f08080;
+    */
+    width: 100;
+    position: absolute;
+    height: 100;
+    /*background: #abcdef;*/
+    padding: 0.25em;
+    top: 10px;
+    left: 500px;
+}
+
+
 /* header h2 { */
 div#headerdiv {
     border-right: 3px solid #696969;
